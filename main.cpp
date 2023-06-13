@@ -1,17 +1,12 @@
 #include <iostream>
-#include "movie.h"
-
-int random_one_to_ten() {
-    srand(time(0));
-    return (rand()%10)+1;
-}
-
+#include <random>
+#include "menu.h"
 using namespace std;
+
+Rental_Base* Menu::_rental = new Rental_Base();
+
 int main() {
-    int size = random_one_to_ten();
-    Movie* movies = new Movie[size]();
-    generate_movies(movies, size);
-    display_movies(movies, size);
-    delete_movies(movies);
+    auto* menu = new Menu();
+    menu->menu();
     return 0;
 }
