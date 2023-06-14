@@ -19,7 +19,7 @@ void Menu::menu_rent() { // Menu for renting a movie
     system("cls");
 
     while (true) {
-        int choice = 0;
+        int choice;
         system("cls");
         separator();
         display("R E N T  A  M O V I E");
@@ -51,7 +51,7 @@ void Menu::menu_return() { // Menu for returning a movie
     system("cls");
 
     while (true) {
-        int choice = 0;
+        int choice ;
         system("cls");
         separator();
         display("R E T U R N  A  M O V I E");
@@ -79,7 +79,7 @@ void Menu::menu_return() { // Menu for returning a movie
 void Menu::menu_check() { // Checking current status of movies rented by a client
     system("cls");
     while (true) {
-        int choice = 0;
+        int choice;
         system("cls");
         separator();
         display("C H E C K  R E N T  S T A T U S");
@@ -108,7 +108,7 @@ void Menu::menu_check() { // Checking current status of movies rented by a clien
 void Menu::menu_movies(){ // Managing movie database
     system("cls");
     while (true) {
-        int choice = 0;
+        int choice;
         system("cls");
         separator();
         display("M O V I E  D A T A B A S E");
@@ -166,7 +166,7 @@ void Menu::menu_clients(){ // Manage client database
     system("cls");
 
     while (true) {
-        int choice = 0;
+        int choice;
         system("cls");
         separator();
         display("C L I E N T  D A T A B A S E");
@@ -198,7 +198,7 @@ void Menu::menu_clients(){ // Manage client database
                 break;
 
             case 2: // Remove a client
-
+                _rental->client_remove();
                 break;
 
             case 3: // Display client database

@@ -8,23 +8,24 @@
 #include <string>
 #include <iomanip>
 #include <conio.h>
+#include <vector>
 #include "text_processing.h"
 
 using namespace std;
 
 class Rental_Base {
 public:
-    Movie** ptr_movies() {return movies;}
-    Client** ptr_clients() {return clients;}
+
+   // Movie** ptr_movies() {return movies;}
+    //Client** ptr_clients() {return clients;}
 
     Rental_Base(){
-        create(movies, movie_count);
-        create(clients, client_count);
+
     }
 
     ~Rental_Base(){
-        remove(movies, movie_count);
-        remove(clients, client_count);
+       movies.clear();
+       clients.clear();
     }
 
     void client_add();
@@ -45,8 +46,8 @@ public:
     void set_client_count(size_t cnt ){client_count = cnt;}
 
 private:
-    Movie** movies;
-    Client** clients;
+    vector <Movie*> movies;
+    vector <Client*> clients;
 
     size_t movie_count{0};
     size_t client_count{0};
@@ -56,9 +57,9 @@ private:
     static void remove(Movie**& movies, size_t& size);
     static void remove(Client**& clients, size_t& size);
 
-    void add(Movie**& movies, size_t size, int type, string movie_string);
-    void resize(Client**& clients, size_t client_count, bool increase);
-    void resize(Movie**& movies, size_t movie_count,bool increase );
+    void add(int type, string movie_string);
+    //void resize(Client**& clients, size_t client_count, bool increase);
+    //void resize(Movie**& movies, size_t movie_count,bool increase );
 };
 
 

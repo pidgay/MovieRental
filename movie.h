@@ -6,6 +6,7 @@ using namespace std;
 
 class Movie { // Abstract class
 public:
+
     Movie(const string &title, float price) : title(title), price(price) {}
 
     string get_title(){ return title;}
